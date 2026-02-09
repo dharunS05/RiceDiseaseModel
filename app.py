@@ -23,7 +23,7 @@ st.set_page_config(
 # -----------------------------
 @st.cache_resource
 def load_trained_model():
-    return load_model("/content/mydrive/MyDrive/rice_disease_models/rice_disease_model1.keras", compile=False)
+    return load_model("models/rice_disease_model1.keras", compile=False)
 
 model = load_trained_model()
 
@@ -74,3 +74,4 @@ if uploaded_file:
     else:
         st.success(f"**Disease:** {CLASS_NAMES[pred_class]}")
         st.write(f"**Confidence:** {confidence * 100:.2f}%")
+
